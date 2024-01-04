@@ -7,11 +7,11 @@ export default function Navbar() {
     setBtnState((btnState) => !btnState);
   };
   let toggleClass = btnState ? "open" : "";
-  // if (toggleClass) {
-  //   icon = "fa-solid fa-xmark";
-  // } else {
-  //   icon = "fa-solid fa-bars";
-  // }
+  if (toggleClass) {
+    icon = "fa-solid fa-xmark";
+  } else {
+    icon = "fa-solid fa-bars";
+  }
   return (
     <div>
       <header>
