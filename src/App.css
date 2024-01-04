@@ -1,0 +1,172 @@
+/* Navbar */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: blue;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.1s ease-in-out;
+}
+
+a:hover {
+  color: orchid;
+}
+
+/* ********************** header********************** */
+header {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link {
+  color: rgb(231, 62, 62);
+  font-weight: bold;
+  /* text-decoration: underline; */
+}
+
+.navbar {
+  width: 100%;
+  max-width: 1200px;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.list {
+  display: flex;
+  gap: 2rem;
+}
+
+.toggle_btn {
+  color: #fff;
+  transition: all 0.3s ease-in-out !important;
+  font-size: 20px;
+  display: none;
+}
+
+.action_btn {
+  border: 1px solid orchid;
+  color: orchid;
+  background: transparent;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  transition: 0.5s all ease-in-out 0s;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.action_btn::before {
+  content: "";
+  background-color: violet;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  transition: 0.5s all ease-in-out;
+  border-radius: 20px;
+}
+
+.action_btn:hover::before {
+  transform: translateX(0);
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.action_btn:hover {
+  color: #fff;
+}
+
+/* menu dropdown */
+.menu_dropdown {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 70px;
+  width: 350px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu_dropdown.open {
+  height: 270px;
+}
+
+.menu_dropdown li {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.action_btn_2 {
+  border: 2px solid orchid;
+  color: orchid;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.5s all ease-in-out 0s;
+  display: flex;
+  justify-content: center;
+}
+
+.action_btn_2:hover {
+  color: #fff !important;
+  background-color: orchid !important;
+}
+
+/* ************************************* RESPONSIVE DESIGNS ************************************* */
+@media (max-width: 992px) {
+  .navbar .list,
+  .navbar .action_btn {
+    display: none;
+  }
+
+  .navbar .toggle_btn {
+    display: block;
+  }
+
+  .menu_dropdown {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .menu_dropdown {
+    left: 2rem;
+    width: unset;
+  }
+}
