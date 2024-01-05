@@ -2,20 +2,13 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/navbar";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import AppRouter from './config/appRouter';
 
 function App() {
   return (
     <div className="App">
-      {/* navbar */}
-      <Navbar />
-      {/* navbar note. (Please do not edit the navbar regards "Team admin") */}
-
-      {/* ---------------------------------------------- */}
-
-      {/* banner section */}
-      <section id="banner">
-        {/* code */}
-      </section>
+    <AppRouter />
     </div>
   );
 }
